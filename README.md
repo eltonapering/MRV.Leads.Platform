@@ -52,14 +52,14 @@ Este projeto backend tem como objetivo fornecer uma solução robusta para geren
 - **Database:** MRVLeadLogs
 
 # Execução
-- [BackEnd](#aba-1)
-- [FrontEnd](#aba-2)
+- [BackEnd](#backend)
+- [FrontEnd](#frontend)
 
 ## BackEnd
-Ao executar a API MRV.Leads.Platform.Api, e acionar um POST pelo swagger de `Intents/{id}/accept`, o sistema irá :
+Ao executar a API MRV.Leads.Platform.Api, e acionar um POST pelo swagger de `Intents/{id}/accept`, o sistema irá:
 1. setar o intent para accept (status 0);
 2. verificar aplicação de desconto;
-3. persistir o objeto itent no bando de dados;
+3. persistir o objeto intent no banco de dados;
 4. produzir uma mensagem RabbitMQ que será enfileirada na fila denominada `intent.accepted.queue`;
 5. registrar um log da operação com event sourcing;
 
@@ -68,4 +68,5 @@ Ao executar a API MRV.Leads.Platform.Api, e acionar um POST pelo swagger de `Int
 ## FrontEnd
 Em desenvolvimento
 
-[Voltar para o Execução](#execução)
+[Voltar para Execução](#execução)
+
