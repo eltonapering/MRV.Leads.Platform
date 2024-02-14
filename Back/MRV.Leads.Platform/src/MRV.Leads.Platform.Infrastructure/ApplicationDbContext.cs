@@ -24,13 +24,14 @@ public class ApplicationDbContext : DbContext
         var contactOne = Guid.NewGuid();
         var contactTwo = Guid.NewGuid();
         var contactThree = Guid.NewGuid();
-        var contactFour = Guid.NewGuid();        
+        var contactFour = Guid.NewGuid();
+        
         // Seeding Contact
         modelBuilder.Entity<Contact>().HasData(
-            new Contact(id: contactOne,   fullName:  "Contact One",   phoneNumber: "1234567890", email: "user1@example.com"),
-            new Contact(id: contactTwo,   fullName:  "Contact Two",   phoneNumber: "0987654321" , email: "user2@example.com"),
-            new Contact(id: contactThree, fullName:  "Contact Three", phoneNumber: "1020304050", email: "user3@example.com"),
-            new Contact(id: contactFour,  fullName:  "Contact Four",  phoneNumber: "5040302010", email: "user4@example.com")
+            new Contact(id: contactOne,   firstName: "Bill",  fullName: "Bill Brady",      phoneNumber: "1234567890",  email: "billbrady@example.com"),
+            new Contact(id: contactTwo,   firstName: "Craig", fullName: "Craig Flynn",     phoneNumber: "0987654321" , email: "craigflynn@example.com"),
+            new Contact(id: contactThree, firstName: "Pete",  fullName: "Pete Edwards",    phoneNumber: "1020304050",  email: "peteedwards@example.com"),
+            new Contact(id: contactFour,  firstName: "Chris", fullName: "Chris Sanderson", phoneNumber: "5040302010",  email: "chrissanderson@example.com")
         );
 
         // Seeding Intent
@@ -40,36 +41,38 @@ public class ApplicationDbContext : DbContext
                 contactId: contactOne,
                 suburb: "Yandera 2574",
                 category: Category.painters,
-                description: "Initial intent",
+                description: "Need to paint 2 aluminium windows and a siding glass door",
                 price: 99.99m,
-                status: IntentStatus.Accepted 
+                status: IntentStatus.New 
             ),
             new Intent
             (   
                 contactId: contactTwo,
                 suburb: "Woolooware 2230",
                 category: Category.interiorPainters,
-                description: "Second intent",
+                description: "Internal wall 3 colours",
                 price: 99.99m,
-                status: IntentStatus.Accepted
+                status: IntentStatus.New
             ),
             new Intent
             (
                 contactId: contactThree,
                 suburb: "Caramar 6031",
                 category: Category.building,
-                description: "Thirty intent",
+                description: "Plastes exposed brick wall (see photos), square off 2 archways (see photos), and " +
+                             "expand pantry (see photos) ",
                 price: 699.99m,
-                status: IntentStatus.Declined
+                status: IntentStatus.Accepted
             ),
             new Intent
             (
                 contactId: contactFour,
                 suburb: "Quinss Rocks 6030",
                 category: Category.demolition,
-                description: "Fourthy intent",
+                description: "There is a two story building at the front of the main house that´s about 10x5 that" +
+                             "would like to convert into self contained living area ",
                 price: 499.99m,
-                status: IntentStatus.Declined
+                status: IntentStatus.Accepted
             )
         );
     }

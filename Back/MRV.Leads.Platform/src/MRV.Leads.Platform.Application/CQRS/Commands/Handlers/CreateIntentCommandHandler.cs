@@ -1,6 +1,5 @@
 ﻿using MediatR;
 using MRV.Leads.Platform.Domain.Entities;
-using MRV.Leads.Platform.Domain.Enums;
 using MRV.Leads.Platform.Infrastructure;
 
 namespace MRV.Leads.Platform.Application.CQRS.Commands.Handlers;
@@ -15,7 +14,7 @@ public class CreateIntentCommandHandler : IRequestHandler<CreateIntentCommand, I
     }
 
     public async Task<Intent> Handle(CreateIntentCommand request, CancellationToken cancellationToken)
-    {   
+    {
         var intent = new Intent(
             contactId: request.ContactId,
             suburb: request.Suburb,

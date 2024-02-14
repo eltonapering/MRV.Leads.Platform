@@ -1,5 +1,38 @@
-<div>
-    <h2>Invited Intents</h2>
-    <!-- Adicione aqui o conteúdo para os intents convidados -->
+<div class="intent-list">
+  <div *ngFor="let invite of invitedIntents" class="intent-card">
+    <div class="intent-header">
+      <div class="user-initial">{{ invite.contact.firstName | slice:0:1 | uppercase }}</div>
+      <div class="user-info">
+        <div class="user-name">{{ invite.contact.firstName }}</div>
+        <div> {{ invite.createdDate | date:'MMMM d, @ h:mm a' }}</div>
+      </div>
+    </div>
+    <hr class="info-separator">
+    <div class="user-details">
+      <div class="detail-item">
+        <i class="fas fa-map-marker-alt"></i> {{ invite.suburb }}
+      </div>
+      <div class="detail-item">
+        <i class="fas fa-tags"></i> {{ invite.categoryDescription }}
+      </div>
+      <div class="detail-item">
+        <i class="fas fa-id-badge"></i> Job ID: {{ invite.id | slice:0:8 }}
+      </div>
+    </div>    
+    <hr class="info-separator">
+    <div class="intent-description">
+      {{ invite.description }}
+    </div>
+    <hr class="info-separator">
+    <div class="intent-actions">      
+      <div class="action-buttons left-aligned">
+        <button class="accept" (click)="acceptIntent(invite.id)">Accept</button>
+        <button class="decline" (click)="declineIntent(invite.id)">Decline</button>
+        <span class="price">{{ invite.price | currency:'USD':true  }} Lead Invitation</span>
+      </div>
+    </div>
   </div>
-  
+  <div *ngIf="noInvitedMessage" class="no-invited-message">
+    {{ noInvitedMessage }}
+  </div>
+</div>

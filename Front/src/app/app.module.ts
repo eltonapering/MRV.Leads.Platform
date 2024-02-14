@@ -9,6 +9,8 @@ import { AppComponent } from './app.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { IntentsComponent } from './components/intents/intents.component';
 import { IntentsDataService } from './services/intents/intents-data.service';
+import { InvitedComponent } from './components/invited/invited.component';
+import { AcceptedComponent } from './components/Accepted/accepted.component';
 
 
 const routes: Routes = [
@@ -18,7 +20,9 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    IntentsComponent
+    IntentsComponent,
+    InvitedComponent,
+    AcceptedComponent
   ],
   imports: [
     CommonModule,

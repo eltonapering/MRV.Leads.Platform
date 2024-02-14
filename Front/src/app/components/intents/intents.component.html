@@ -1,27 +1,12 @@
-<!-- intents.component.html -->
-<div>
-    <!-- Botões das abas -->
-    <button (click)="updateTab('invited')" [class.active]="currentTab === 'invited'">Invited</button>
-    <button (click)="updateTab('accepted')" [class.active]="currentTab === 'accepted'">Accepted</button>
-  </div>
-  
-  <div class="intents-container">
-    <h2>Intents</h2>
-    <!-- Lista os intents de acordo com a aba atual -->
-    <div *ngFor="let intent of intents" class="intent-item">
-      <div><strong>Contact:</strong> {{ intent.contact.fullName }}</div>
-      <div class="intent-details">        
-        <div><strong>Contact:</strong> {{ intent.contact.fullName }}</div>
-        <div><strong>Suburb:</strong> {{ intent.suburb }}</div>
-        <div><strong>Category:</strong> {{ intent.category }}</div>
-        <div><strong>Description:</strong> {{ intent.description }}</div>
-        <div><strong>Price:</strong> {{ intent.price }}</div>
-      </div>
-      <div class="intent-actions">        
-        <!-- Botões para aceitar ou recusar intents, visíveis apenas na aba "Invited" -->
-        <button *ngIf="currentTab === 'invited'" (click)="acceptIntent(intent.id)">Accept</button>
-        <button *ngIf="currentTab === 'invited'" (click)="declineIntent(intent.id)">Decline</button>
-      </div>
-    </div>
-  </div>
-  
+<div class="tab-buttons">
+  <button (click)="updateTab('invited')" [ngClass]="{'active': currentTab === 'invited'}">Invited</button>
+  <button (click)="updateTab('accepted')" [ngClass]="{'active': currentTab === 'accepted'}">Accepted</button>    
+</div>
+
+<div *ngIf="currentTab === 'invited'">
+  <app-invited></app-invited>
+</div>
+
+<div *ngIf="currentTab === 'accepted'">
+  <app-accepted></app-accepted>
+</div>

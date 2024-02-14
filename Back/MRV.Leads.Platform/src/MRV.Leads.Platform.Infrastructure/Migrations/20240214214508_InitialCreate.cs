@@ -18,6 +18,7 @@ namespace MRV.Leads.Platform.Infrastructure.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     FullName = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
                     PhoneNumber = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false)
@@ -70,13 +71,13 @@ namespace MRV.Leads.Platform.Infrastructure.Migrations
 
             migrationBuilder.InsertData(
                 table: "Contacts",
-                columns: new[] { "Id", "Email", "FullName", "PhoneNumber" },
+                columns: new[] { "Id", "Email", "FirstName", "FullName", "PhoneNumber" },
                 values: new object[,]
                 {
-                    { new Guid("462547c5-3d29-4d46-89ab-0bf46f510782"), "user4@example.com", "Contact Four", "5040302010" },
-                    { new Guid("c1c6d0c4-ef52-48c7-bc2f-28958ffef95e"), "user2@example.com", "Contact Two", "0987654321" },
-                    { new Guid("c5457100-13dd-4462-8352-8c2a10e0e89b"), "user3@example.com", "Contact Three", "1020304050" },
-                    { new Guid("e4ac97f0-9c7b-4b0f-bacc-694f4344f5c1"), "user1@example.com", "Contact One", "1234567890" }
+                    { new Guid("320c584f-ead4-4ff6-976f-6ffa0aa3d1b8"), "peteedwards@example.com", "Pete", "Pete Edwards", "1020304050" },
+                    { new Guid("6b2ca483-8c5a-4b09-9be2-0afe75030309"), "craigflynn@example.com", "Craig", "Craig Flynn", "0987654321" },
+                    { new Guid("7e2273c4-f9c4-49e2-8da5-18d19367a552"), "billbrady@example.com", "Bill", "Bill Brady", "1234567890" },
+                    { new Guid("ab6fc60c-d40d-49b9-9369-0b8843f3612b"), "chrissanderson@example.com", "Chris", "Chris Sanderson", "5040302010" }
                 });
 
             migrationBuilder.InsertData(
@@ -84,8 +85,8 @@ namespace MRV.Leads.Platform.Infrastructure.Migrations
                 columns: new[] { "Id", "Active", "CreatedDate", "Email", "Login", "PasswordHash" },
                 values: new object[,]
                 {
-                    { new Guid("2c85deda-d510-4c37-9c31-fc691bb7d9d6"), false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "user2@example.com", "user2", "SomeHashedPassword" },
-                    { new Guid("42a11b3e-5d94-423f-bec0-c9c034fdb8f4"), false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "user1@example.com", "user1", "SomeHashedPassword" }
+                    { new Guid("5d70a4ef-659f-44d0-b7e6-dae24846401d"), false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "user1@example.com", "user1", "SomeHashedPassword" },
+                    { new Guid("99061391-89fc-4339-bcca-c04759c9d657"), false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "user2@example.com", "user2", "SomeHashedPassword" }
                 });
 
             migrationBuilder.InsertData(
@@ -93,10 +94,10 @@ namespace MRV.Leads.Platform.Infrastructure.Migrations
                 columns: new[] { "Id", "Active", "Category", "ContactId", "CreatedDate", "Description", "Price", "Status", "Suburb" },
                 values: new object[,]
                 {
-                    { new Guid("4fc22a04-06d8-4e89-a9b0-380de22b1e39"), true, 4, new Guid("c5457100-13dd-4462-8352-8c2a10e0e89b"), new DateTime(2024, 2, 9, 12, 52, 53, 562, DateTimeKind.Utc).AddTicks(3064), "Thirty intent", 699.99m, 1, "Caramar 6031" },
-                    { new Guid("70b81aad-be1b-492f-9c7e-5684af79ae01"), true, 3, new Guid("462547c5-3d29-4d46-89ab-0bf46f510782"), new DateTime(2024, 2, 9, 12, 52, 53, 562, DateTimeKind.Utc).AddTicks(3068), "Fourthy intent", 499.99m, 1, "Quinss Rocks 6030" },
-                    { new Guid("e8d5046a-87ea-4268-899d-6092151354f4"), true, 1, new Guid("e4ac97f0-9c7b-4b0f-bacc-694f4344f5c1"), new DateTime(2024, 2, 9, 12, 52, 53, 562, DateTimeKind.Utc).AddTicks(3053), "Initial intent", 99.99m, 0, "Yandera 2574" },
-                    { new Guid("f67e0a23-b99f-4c1b-89f0-4f65c83eff26"), true, 2, new Guid("c1c6d0c4-ef52-48c7-bc2f-28958ffef95e"), new DateTime(2024, 2, 9, 12, 52, 53, 562, DateTimeKind.Utc).AddTicks(3060), "Second intent", 99.99m, 0, "Woolooware 2230" }
+                    { new Guid("15942722-a123-4cc7-8128-3284891ae5f2"), true, 2, new Guid("6b2ca483-8c5a-4b09-9be2-0afe75030309"), new DateTime(2024, 2, 14, 21, 45, 7, 243, DateTimeKind.Utc).AddTicks(1281), "Internal wall 3 colours", 99.99m, 0, "Woolooware 2230" },
+                    { new Guid("6810c405-14af-49cb-9649-25e638bbbb5f"), true, 4, new Guid("320c584f-ead4-4ff6-976f-6ffa0aa3d1b8"), new DateTime(2024, 2, 14, 21, 45, 7, 243, DateTimeKind.Utc).AddTicks(1286), "Plastes exposed brick wall (see photos), square off 2 archways (see photos), and expand pantry (see photos) ", 699.99m, 1, "Caramar 6031" },
+                    { new Guid("a12574d3-c804-46da-a200-9520ac783725"), true, 3, new Guid("ab6fc60c-d40d-49b9-9369-0b8843f3612b"), new DateTime(2024, 2, 14, 21, 45, 7, 243, DateTimeKind.Utc).AddTicks(1291), "There is a two story building at the front of the main house that´s about 10x5 thatwould like to convert into self contained living area ", 499.99m, 1, "Quinss Rocks 6030" },
+                    { new Guid("c0ac40ed-1147-44cf-9f30-cf45e846a2e6"), true, 1, new Guid("7e2273c4-f9c4-49e2-8da5-18d19367a552"), new DateTime(2024, 2, 14, 21, 45, 7, 243, DateTimeKind.Utc).AddTicks(1248), "Need to paint 2 aluminium windows and a siding glass door", 99.99m, 0, "Yandera 2574" }
                 });
 
             migrationBuilder.CreateIndex(

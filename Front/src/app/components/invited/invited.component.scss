@@ -1,27 +1,152 @@
-.invited-container {
+// Cores
+$primary-color: #FF6F00; 
+$border-color: #E0E0E0; 
+$text-color: #333333; 
+$icon-color: #9E9E9E; 
+$accept-color: #f58d37;
+$decline-color: #c0bebe; 
+
+.intent-list {
+  padding: 20px;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+
+  .no-invited-message {
+    text-align: center;
     padding: 20px;
-    background-color: #f5f5f5;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .invited-title {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 15px;
-  }
-  
-  .invited-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .invited-item {
-    background-color: #fff;
-    border-radius: 5px;
-    margin-bottom: 10px;
+    color: #666;
+  }  
+
+  .intent-card {
     padding: 15px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    border: 1px solid $border-color;
+    border-left: 5px solid $primary-color;
+    background-color: #FFFFFF;
+
+    .info-separator {
+      border-top: 1px solid #ccc; 
+      margin: 10px 0; 
+    }
+
+    .user-details {
+      display: flex;
+      align-items: center;
+          
+      .detail-item {
+        margin-right: 20px;
+        display: flex;
+        align-items: center;
+  
+        i {
+          margin-right: 5px;
+        }
+      }
+    } 
+
+    .intent-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+
+      .user-icon {
+        font-size: 24px;
+        color: $icon-color;
+        margin-right: 10px;
+      }
+
+      .user-initial {
+        width: 40px; 
+        height: 40px; 
+        border-radius: 50%; 
+        background-color: $primary-color; 
+        color: white; 
+        display: flex;
+        justify-content: center; 
+        align-items: center;
+        font-size: 20px; 
+        font-weight: bold; 
+        margin-right: 10px; 
+      }      
+
+      .user-info {
+        flex-grow: 1;
+
+        .user-name {
+          font-weight: bold;
+          color: $text-color;
+        }
+
+        .user-suburb {
+          color: $icon-color;
+        }
+      }
+
+      .intent-date {
+        color: $icon-color;
+        font-size: 14px;
+      }
+    }
+
+    .intent-details {
+      margin-bottom: 12px;
+      color: $icon-color;
+
+      .icon {
+        font-size: 18px;
+        margin-right: 5px;
+      }
+    }
+
+    .intent-description {
+      color: $text-color;
+      margin-bottom: 16px;
+    }
+
+    .intent-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .price {
+        font-size: 16px;
+        font-weight: bold;
+        color: $text-color;
+      }
+
+      .action-buttons {
+        .left-aligned {
+          justify-content: flex-start; 
+        }
+        display: flex;
+        gap: 10px;
+
+        button {
+          padding: 8px 16px;
+          border: none;
+          border-radius: 4px;
+          font-weight: bold;
+          cursor: pointer;
+
+          &.accept {
+            background-color: $accept-color;
+            color: white;
+            i {
+              margin-right: 5px;
+            }
+          }
+
+          &.decline {
+            background-color: $decline-color;
+            color: white;
+            i {
+              margin-right: 5px;
+            }
+          }
+        }
+      }
+    }
   }
+}

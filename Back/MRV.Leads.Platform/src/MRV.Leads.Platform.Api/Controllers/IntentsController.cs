@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using MRV.Leads.Platform.Application.CQRS.Commands;
 using MRV.Leads.Platform.Application.CQRS.Queries;
@@ -40,7 +41,7 @@ public class IntentsController : ControllerBase
     /// Get Intents by Status.
     /// </summary>
     /// <remarks>
-    /// Use 0 for Accepted intents and 1 for Declined intents.
+    /// Use 1 for Accepted intents and 2 for Declined intents. 0 é new intent
     /// </remarks>
     /// <param name="status">The status of the intent.</param>
     /// <returns>A list of intents with the specified status.</returns>
@@ -54,7 +55,7 @@ public class IntentsController : ControllerBase
         var intents = await _mediator.Send(query);
         if (intents == null || !intents.Any()) 
         {
-            return NotFound();
+            return Ok(new List<Intent>());
         }
 
         return Ok(intents);

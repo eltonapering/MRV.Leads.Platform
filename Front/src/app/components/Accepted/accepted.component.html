@@ -1,5 +1,41 @@
-<div>
-    <h2>Accepted Intents</h2>
-    <!-- Adicione aqui o conteúdo para os intents aceitos -->
+<div class="accepted-list">
+  <div *ngFor="let accepted of acceptedIntents" class="accepted-card">
+    <div class="accepted-header">
+      <div class="user-initial">{{ accepted.contact.firstName | slice:0:1 | uppercase }}</div>
+      <div class="user-info">
+        <div class="user-name">{{ accepted.contact.fullName }}</div>
+        <div><i></i> {{ accepted.createdDate | date:'MMMM d, @ h:mm a' }}</div>
+      </div>
+    </div>    
+    <hr class="info-separator">
+    <div class="user-details">
+      <div class="detail-item">
+        <i class="fas fa-map-marker-alt"></i> {{ accepted.suburb }}
+      </div>
+      <div class="detail-item">
+        <i class="fas fa-tags"></i> {{ accepted.categoryDescription }}
+      </div>
+      <div class="detail-item">
+        <i class="fas fa-id-badge"></i> Job ID: {{ accepted.id | slice:0:8 }}
+      </div>
+      <div class="detail-item">
+         ${{ accepted.price }} Lead Invitation
+      </div>
+    </div>
+    <hr class="info-separator">
+    <div class="user-details">
+      <div class="detail-item">
+        <i class="fas fa-phone"></i> {{ accepted.contact.phoneNumber }}
+      </div>
+      <div class="detail-item">
+        <i class="fas fa-envelope"></i> {{ accepted.contact.email }}
+      </div>      
+    </div>
+    <div class="accepted-description">
+      {{ accepted.description }}
+    </div>  
   </div>
-  
+  <div *ngIf="noAcceptedMessage" class="no-accepted-message">
+    {{ noAcceptedMessage }}
+  </div>
+</div>

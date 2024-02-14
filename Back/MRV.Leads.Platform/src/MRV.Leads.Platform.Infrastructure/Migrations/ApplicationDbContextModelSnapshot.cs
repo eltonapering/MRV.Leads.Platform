@@ -32,6 +32,10 @@ namespace MRV.Leads.Platform.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("FullName")
                         .IsRequired()
                         .HasMaxLength(200)
@@ -49,30 +53,34 @@ namespace MRV.Leads.Platform.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("be9ac010-2695-47ef-9e94-fa308b7fe030"),
-                            Email = "user1@example.com",
-                            FullName = "Contact One",
+                            Id = new Guid("6d4b1892-226b-48b3-abdd-68b24dadb2b7"),
+                            Email = "billbrady@example.com",
+                            FirstName = "Bill",
+                            FullName = "Bill Brady",
                             PhoneNumber = "1234567890"
                         },
                         new
                         {
-                            Id = new Guid("e7457cb1-e53f-4666-ad3b-0fb702812406"),
-                            Email = "user2@example.com",
-                            FullName = "Contact Two",
+                            Id = new Guid("eb2ecc5a-eb33-4c0e-8883-319a010fa5ce"),
+                            Email = "craigflynn@example.com",
+                            FirstName = "Craig",
+                            FullName = "Craig Flynn",
                             PhoneNumber = "0987654321"
                         },
                         new
                         {
-                            Id = new Guid("aed071d5-f101-4787-9022-56c98125353d"),
-                            Email = "user3@example.com",
-                            FullName = "Contact Three",
+                            Id = new Guid("e4005658-ddfe-415a-a880-3350af33aa6e"),
+                            Email = "peteedwards@example.com",
+                            FirstName = "Pete",
+                            FullName = "Pete Edwards",
                             PhoneNumber = "1020304050"
                         },
                         new
                         {
-                            Id = new Guid("7f814c45-0768-43e5-ae9a-f261a3e6c6aa"),
-                            Email = "user4@example.com",
-                            FullName = "Contact Four",
+                            Id = new Guid("43846aea-f12b-4e48-89de-c5f6e9eb1795"),
+                            Email = "chrissanderson@example.com",
+                            FirstName = "Chris",
+                            FullName = "Chris Sanderson",
                             PhoneNumber = "5040302010"
                         });
                 });
@@ -119,48 +127,48 @@ namespace MRV.Leads.Platform.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("a136e6c3-2811-49d1-a650-afc0a83a257e"),
+                            Id = new Guid("56696dc7-1dcb-453f-943d-e31b085ed99d"),
                             Active = true,
                             Category = 1,
-                            ContactId = new Guid("be9ac010-2695-47ef-9e94-fa308b7fe030"),
-                            CreatedDate = new DateTime(2024, 2, 9, 12, 53, 13, 192, DateTimeKind.Utc).AddTicks(491),
-                            Description = "Initial intent",
+                            ContactId = new Guid("6d4b1892-226b-48b3-abdd-68b24dadb2b7"),
+                            CreatedDate = new DateTime(2024, 2, 14, 21, 45, 37, 83, DateTimeKind.Utc).AddTicks(1268),
+                            Description = "Need to paint 2 aluminium windows and a siding glass door",
                             Price = 99.99m,
                             Status = 0,
                             Suburb = "Yandera 2574"
                         },
                         new
                         {
-                            Id = new Guid("9529e94d-da85-4808-822e-c0b3f8610749"),
+                            Id = new Guid("5f0d2942-3038-48ec-8c9b-7659d7e0d605"),
                             Active = true,
                             Category = 2,
-                            ContactId = new Guid("e7457cb1-e53f-4666-ad3b-0fb702812406"),
-                            CreatedDate = new DateTime(2024, 2, 9, 12, 53, 13, 192, DateTimeKind.Utc).AddTicks(501),
-                            Description = "Second intent",
+                            ContactId = new Guid("eb2ecc5a-eb33-4c0e-8883-319a010fa5ce"),
+                            CreatedDate = new DateTime(2024, 2, 14, 21, 45, 37, 83, DateTimeKind.Utc).AddTicks(1281),
+                            Description = "Internal wall 3 colours",
                             Price = 99.99m,
                             Status = 0,
                             Suburb = "Woolooware 2230"
                         },
                         new
                         {
-                            Id = new Guid("a126cd6c-c48e-47fe-9621-23fc85ccdd5e"),
+                            Id = new Guid("89d2a743-476a-434b-90ac-0b2c8f72921a"),
                             Active = true,
                             Category = 4,
-                            ContactId = new Guid("aed071d5-f101-4787-9022-56c98125353d"),
-                            CreatedDate = new DateTime(2024, 2, 9, 12, 53, 13, 192, DateTimeKind.Utc).AddTicks(506),
-                            Description = "Thirty intent",
+                            ContactId = new Guid("e4005658-ddfe-415a-a880-3350af33aa6e"),
+                            CreatedDate = new DateTime(2024, 2, 14, 21, 45, 37, 83, DateTimeKind.Utc).AddTicks(1287),
+                            Description = "Plastes exposed brick wall (see photos), square off 2 archways (see photos), and expand pantry (see photos) ",
                             Price = 699.99m,
                             Status = 1,
                             Suburb = "Caramar 6031"
                         },
                         new
                         {
-                            Id = new Guid("f7d89403-014b-4b29-9623-916627b7d78d"),
+                            Id = new Guid("f36cc420-2059-46a0-8589-0268ad192b8f"),
                             Active = true,
                             Category = 3,
-                            ContactId = new Guid("7f814c45-0768-43e5-ae9a-f261a3e6c6aa"),
-                            CreatedDate = new DateTime(2024, 2, 9, 12, 53, 13, 192, DateTimeKind.Utc).AddTicks(523),
-                            Description = "Fourthy intent",
+                            ContactId = new Guid("43846aea-f12b-4e48-89de-c5f6e9eb1795"),
+                            CreatedDate = new DateTime(2024, 2, 14, 21, 45, 37, 83, DateTimeKind.Utc).AddTicks(1292),
+                            Description = "There is a two story building at the front of the main house that´s about 10x5 thatwould like to convert into self contained living area ",
                             Price = 499.99m,
                             Status = 1,
                             Suburb = "Quinss Rocks 6030"
@@ -200,7 +208,7 @@ namespace MRV.Leads.Platform.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("26e15674-0e3a-4115-813d-2fecd6b5042a"),
+                            Id = new Guid("75294ebe-5813-468b-8d35-46879f6b6f3b"),
                             Active = false,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "user1@example.com",
@@ -209,7 +217,7 @@ namespace MRV.Leads.Platform.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("0609c34b-e9bf-4de5-8b84-71374f785840"),
+                            Id = new Guid("f6b279d1-0c84-43ba-acca-a44454a86c9e"),
                             Active = false,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "user2@example.com",
