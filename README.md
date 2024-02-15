@@ -62,4 +62,6 @@ Ao executar a API MRV.Leads.Platform.Api, e acionar um POST pelo swagger de `Int
 5. registrar um log da operação com event sourcing;
 
 ## FrontEnd
-Em desenvolvimento
+1. Clone o repositório;
+2. Execute o comando: npm i;
+3. Execute o comando: ng serve
