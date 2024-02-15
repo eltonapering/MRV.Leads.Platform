@@ -18,6 +18,13 @@ public class IntentAcceptedPublisher
 
     public void PublishIntentAccepted(IntentAcceptedMessage message)
     {
+        _channel.QueueDeclare(queue: "intent.accepted.queue",
+                         durable: false, 
+                         exclusive: false, 
+                         autoDelete: false, 
+                         arguments: null);
+
+
         var body = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(message));
 
         _channel.BasicPublish(

@@ -1,0 +1,20 @@
+To: craigflynn@example.com
+Subject: Lead Accepted
+Body:
+Internal wall 3 colours Price : $ 99,99 Discount 10 % : False
+
+To: peteedwards@example.com
+Subject: Lead Accepted
+Body:
+Plastes exposed brick wall (see photos), square off 2 archways (see photos), and expand pantry (see photos)  Price : $ 629,991 Discount 10 % : True
+
+To: peteedwards@example.com
+Subject: Lead Accepted
+Body:
+Plastes exposed brick wall (see photos), square off 2 archways (see photos), and expand pantry (see photos)  Price : $ 566,991 Discount 10 % : True
+
+To: peteedwards@example.com
+Subject: Lead Accepted
+Body:
+Plastes exposed brick wall (see photos), square off 2 archways (see photos), and expand pantry (see photos)  Price : $ 510,291 Discount 10 % : True
+

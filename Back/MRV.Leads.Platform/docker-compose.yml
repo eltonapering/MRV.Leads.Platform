@@ -8,14 +8,15 @@ services:
     environment:
       SA_PASSWORD: "Secret@123"
       ACCEPT_EULA: "Y"
-      MSSQL_PID: "Express"
+      MSSQL_PID: "Express"    
+    restart: unless-stopped
 
   mongodb:
-     container_name: mongodb
-     image: mongo:latest
-     restart: unless-stopped
-     ports:
-      - 27017:27017
+    container_name: mongodb
+    image: mongo:latest     
+    ports:
+     - 27017:27017    
+    restart: unless-stopped
 
   rabbitmq:
     container_name: rabbitmq
@@ -25,12 +26,14 @@ services:
       - '15672:15672'
     healthcheck:
       test: rabbitmq-diagnostics -q ping
-      interval: 30s
-      timeout: 30s
-      retries: 3
+      interval: 1m
+      timeout: 10s
+      retries: 5
+      start_period: 30s
     volumes:
       - './volumes/rabbitmq:/data'
     restart: unless-stopped
-
+    
+    
 volumes:
-    db:     
+    db: 
