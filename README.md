@@ -1,6 +1,6 @@
 # Plataforma de Geração de Leads MRV
 
-Este projeto backend tem como objetivo fornecer uma solução robusta para gerenciamento de leads, implementando diversas tecnologias e práticas avançadas. Abaixo estão listados os principais desafios abordados no projeto:
+Este projeto tem como objetivo fornecer uma solução robusta para gerenciamento de leads, implementando diversas tecnologias e práticas avançadas. Abaixo estão listados os principais desafios abordados no projeto:
 
 ## Desafios
 
