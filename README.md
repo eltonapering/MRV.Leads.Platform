@@ -61,6 +61,9 @@ Ao executar a API MRV.Leads.Platform.Api, e acionar um POST pelo swagger de `Int
 4. produzir uma mensagem RabbitMQ que será enfileirada na fila denominada `intent.accepted.queue`;
 5. registrar um log da operação com event sourcing;
 
+   -Foi Criado uma background para processar a leitura das mensagens no rabbitMQ, após essa leitura
+    será feito o "envio de e-mail" - escrita em uma arquivo fake_email.txt (estará no diretório MRV.Leads.Platform.Api);
+
 ## FrontEnd
 1. Clone o repositório;
 2. Execute o comando: npm i;
